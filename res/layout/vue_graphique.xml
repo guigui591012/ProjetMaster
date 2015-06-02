@@ -1,0 +1,106 @@
+<LinearLayout
+   	xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+   	android:orientation="vertical"
+    android:background="@drawable/degrade">
+
+         <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1" >
+
+                <TextView
+                    android:id="@+id/joueur"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:gravity="center"
+                    android:text="@string/joueur"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#042988" />
+
+                <Spinner
+                    android:id="@+id/selectpoints"
+                    android:background="@drawable/spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".70"
+                    android:gravity="center" />
+            </LinearLayout>
+            
+         <Button
+                android:id="@+id/graphiquepoints"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:textSize="20sp"
+                android:textColor="#042988"
+                android:background="@drawable/border"
+                android:drawableLeft="@drawable/graphiquepoint"
+                android:text="@string/graphiquepoint" />
+			
+                    <LinearLayout
+         	android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:padding="20dp"
+    		android:weightSum="1"
+    		android:orientation="horizontal">
+    		
+                      	<TextView
+                      	android:id="@+id/victoire"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight=".5"
+				        android:text="@string/victoire"
+				        android:textColor="#0B6121"
+				        android:textAppearance="?android:attr/textAppearanceMedium"
+				        android:gravity="center" />
+
+                      	
+                      	 <TextView
+                      	android:id="@+id/defaite"
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_weight=".5"
+				        android:text="@string/defaite"
+				        android:textColor="#DF0101"
+				        android:textAppearance="?android:attr/textAppearanceMedium"
+				        android:gravity="center" />
+
+			</LinearLayout>
+			
+			
+          	
+
+
+			<LinearLayout
+	    	android:id="@+id/chart"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/spinner"
+	   		android:orientation="vertical" >
+			</LinearLayout>
+			
+			            <com.google.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+                android:id="@+id/adView"
+                android:layout_marginTop="5dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id"
+                ads:loadAdOnCreate="true"
+                />
+
+
+</LinearLayout>
+
+  

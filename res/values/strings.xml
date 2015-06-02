@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cal \' Ping</string>
+  	<string name="joueur"><u><i>Joueur :</i></u></string> 
+  	<string name="coeff"><u><i>Coeff :</i></u></string> 
+    <string name="victoire">Victoire : </string>
+    <string name="defaite">Défaite : </string>
+    <string name="supprimer">Supprimer</string>
+  	<string name="nombre1">Vos points</string>
+  	<string name="nombre2">Points adversaire</string>
+  	<string name="description">Description image</string>
+  	<string name="calcul">Calcul</string>
+	<string name="graphiquepoint">Graphique de vos points</string>
+    <string name="rechercherjoueur">Rechercher un joueur</string>
+ 	<string name="banner_ad_unit_id">ca-app-pub-1496017384993341/2597258515</string>
+ 	<string name="deviceID">015267F8E6259EA8A6258BCAD108B692</string>
+
+ 
+
+</resources>

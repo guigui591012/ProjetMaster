@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/Projet_TNSI/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="button">10dp</dimen>
+    <!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/Projet_TNSI/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Cal \' Ping</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6477271724049958/7193405425</string>
+    <string name="calcul">Calcul</string>
+    <string name="coeff"><u><i>Coeff :</i></u></string>
+    <string name="defaite">Défaite : </string>
+    <string name="description">Description image</string>
+    <string name="deviceID">015267F8E6259EA8A6258BCAD108B692</string>
+    <string name="graphiquepoint">Graphique de vos points</string>
+    <string name="joueur"><u><i>Joueur :</i></u></string>
+    <string name="nombre1">Vos points</string>
+    <string name="nombre2">Points adversaires</string>
+    <string name="rechercherjoueur">Rechercher un joueur</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="victoire">Victoire : </string>
+    <!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/Projet_TNSI/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
+    <item name="android:actionBarTabBarStyle">@style/MyTheme.ActionBar.TabBar</item>
+    <item name="android:actionBarTabStyle">@style/MyTheme.ActionBar.TabView</item>
+    <item name="android:actionBarTabTextStyle">@style/MyTheme.ActionBar.TabText</item>
+  
+        
+</style>
+    <style name="MyTheme.ActionBar.TabBar" parent="android:style/Widget.Holo.Light.ActionBar.TabBar">
+	    <item name="android:background">#204A87</item>
+	</style>
+    <style name="MyTheme.ActionBar.TabText" parent="android:style/Widget.Holo.ActionBar.TabText">
+	    <item name="android:textColor">#ffffff</item>
+	</style>
+    <style name="MyTheme.ActionBar.TabView" parent="android:style/Widget.Holo.ActionBar.TabView">
+	    <item name="android:background">@drawable/tab_bar_background</item>
+	</style>
+</resources>

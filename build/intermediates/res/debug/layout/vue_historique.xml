@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/degrade"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:weightSum="1" >
+
+                <TextView
+                    android:id="@+id/joueur"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:gravity="center"
+                    android:text="@string/joueur"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#042988" />
+
+                <Spinner
+                    android:id="@+id/selectpoints"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".50"
+                    android:background="@drawable/spinner"
+                    android:drawSelectorOnTop="true"
+                    android:gravity="center"
+                    tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+                <ImageButton
+                    android:id="@+id/corbeille"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".20"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/border"
+                    android:src="@drawable/corbeille" />
+            </LinearLayout>
+
+            <GridLayout
+                android:id="@+id/grl_resultat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/selectpoints"
+                android:layout_margin="1dp"
+                android:background="@drawable/border"
+                android:stretchColumns="1" >
+            </GridLayout>
+            
+             <com.google.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+                android:id="@+id/adView"
+                android:layout_marginTop="5dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id"
+                ads:loadAdOnCreate="true"
+                ads:testDevices="TEST_EMULATOR, @string/deviceID" />
+        </LinearLayout>
+        
+                   
+    </ScrollView>
+
+</LinearLayout><!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/Projet_TNSI/res/layout/vue_historique.xml -->
