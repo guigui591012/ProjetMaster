@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
-                android:text="Gestions des joueurs"
+                android:text="Gestion des joueurs"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#042988"
                 android:textSize="30sp"
@@ -42,8 +42,17 @@
                     android:adjustViewBounds="true"
                     android:background="@drawable/border"
                     android:src="@drawable/ajouterjoueur" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/border"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:text="Ajouter une dérive"
+                    android:id="@+id/derive" />
             </LinearLayout>
-            
+
             <EditText
                     android:id="@+id/filtre"
                     android:layout_width="fill_parent"
@@ -70,8 +79,8 @@
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_ad_unit_id"
                 ads:loadAdOnCreate="true"
-                ads:testDevices="TEST_EMULATOR, @string/deviceID" />
+                 />
         </LinearLayout>
         
 
-</RelativeLayout><!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/Projet_TNSI/res/layout/vue_fiche.xml -->
+</RelativeLayout><!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/CalPing/res/layout/vue_fiche.xml -->

@@ -115,7 +115,7 @@ public static double floor(double a, int n) {
 @Override
 public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 	
-    rootView = (ViewGroup) inflater.inflate(R.layout.vue_graphique, null);
+    rootView = inflater.inflate(R.layout.vue_graphique, null);
     chargerSpinner();
     GraphiquePoints = (Button)rootView.findViewById(R.id.graphiquepoints);
     GraphiquePoints.setOnClickListener(new View.OnClickListener() {

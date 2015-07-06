@@ -399,7 +399,7 @@ public class FragmentAccueil extends Fragment {
 	{
 		AlertDialog.Builder ald_memoire = new AlertDialog.Builder(getActivity());
 		ald_memoire.setTitle("Aucune connexion internet trouvé ");
-		ald_memoire.setMessage("Voullez-vous activer internet ? ");
+		ald_memoire.setMessage("Voulez-vous activer internet ? ");
 		ald_memoire.setIcon(R.drawable.wifi);
 		ald_memoire.setPositiveButton("Oui",new DialogInterface.OnClickListener() {
 					@SuppressLint("NewApi") public void onClick(DialogInterface dialog, int which) {

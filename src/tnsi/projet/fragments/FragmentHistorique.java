@@ -248,8 +248,8 @@ public class FragmentHistorique extends Fragment {
 		AlertDialog.Builder ald_memoire = new AlertDialog.Builder(getActivity());
 		ald_memoire.setTitle("Suppression de l'historique du joueur !");
 		ald_memoire.setIcon(R.drawable.corbeille);
-		ald_memoire.setMessage("Que voullez-vous supprimer  ? ");
-		ald_memoire.setPositiveButton("Tous",
+		ald_memoire.setMessage("Que voulez-vous supprimer  ? ");
+		ald_memoire.setPositiveButton("Tout",
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						FonctionHistorique bd_historique = new FonctionHistorique(
@@ -262,7 +262,7 @@ public class FragmentHistorique extends Fragment {
 								Toast.LENGTH_SHORT).show();
 					}
 				});
-		ald_memoire.setNegativeButton("Choisir",
+		ald_memoire.setNegativeButton("Sélectionner",
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 

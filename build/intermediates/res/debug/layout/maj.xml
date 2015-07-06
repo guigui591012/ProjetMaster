@@ -1,29 +1,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/degrade"
+    android:layout_height="fill_parent"
+  
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
 
-    <ScrollView
+    <ImageView
+        android:id="@+id/majIMAGE"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="L'application Calping met à jour vos points"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#042988"
-                android:textSize="45sp"
-                android:layout_marginBottom="20sp"
-                android:textStyle="bold" />
-
-          
-    </ScrollView>
-
-</LinearLayout><!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/Projet_TNSI/res/layout/maj.xml -->
+        android:layout_height="fill_parent"
+        android:src="@drawable/maj" 
+        android:contentDescription="test"
+        android:scaleType="fitCenter"/>
+</LinearLayout><!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/CalPing/res/layout/maj.xml -->

@@ -50,9 +50,11 @@ import com.pongiste.calping.R;
 	float pointsjoueur_mensuels,pointsjoueur_courants;
 	private AlertDialog.Builder build;	
 	int ini,i,id_joueur,nbjoueur;
-	EditText nomjoueur, prenomjoueur,pointsjoueur_mensuel,pointsjoueur_courant;   
+	EditText nomjoueur, prenomjoueur,pointsjoueur_mensuel,pointsjoueur_courant,nbderive;
 	ImageButton btnAjouterJoueur;
 	Button monbouton;
+	Button maderive;
+	float pointcourant;
 	
 	
 	
@@ -62,14 +64,19 @@ import com.pongiste.calping.R;
 		 rootView = inflater.inflate(R.layout.vue_fiche, container, false);
 		 creerListe();
 		 btnAjouterJoueur = (ImageButton) rootView.findViewById(R.id.btn_AlertDialog);
-		 btnAjouterJoueur.setOnClickListener(new View.OnClickListener() 
-		 
-		  	{public void onClick(View v)
+		 btnAjouterJoueur.setOnClickListener(new View.OnClickListener() {public void onClick(View v)
 			  		{
 				  	ajouterJoueur();
 			  		}
 		  	});
-	
+		 maderive = (Button) rootView.findViewById(R.id.derive);
+		 maderive.setOnClickListener(new View.OnClickListener()
+
+		 {public void onClick(View v)
+			 {
+				 ajouterDerive();
+			 }
+		 });
 		 return rootView;
 	    }
 	 
@@ -89,7 +96,10 @@ import com.pongiste.calping.R;
 				}
 			}
 		}
-	 
+
+
+
+
 	  /**
 	   * Permet d'afficher la liste des joueurs
 	   */
@@ -105,37 +115,36 @@ import com.pongiste.calping.R;
 		 mylist.setAdapter(adapter);
 	
 	
-		 mylist.setOnItemClickListener(new OnItemClickListener()
-		{
+		 mylist.setOnItemClickListener(new OnItemClickListener() {
 
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+			 public void onItemClick(AdapterView<?> parent, View view,
+									 int position, long id) {
 
-				//On va récupérer les informations dont l'on a besoin
+				 //On va récupérer les informations dont l'on a besoin
 				 Joueur j2 = (Joueur) parent.getItemAtPosition(position);
 				 int idjoueuramodifier = j2.getIdjoueur();
 				 modifierJoueur(idjoueuramodifier);
 
-			}
+			 }
 
-		
-		});
+
+		 });
 		 
 		/**
 		 * Recherche de joueur ..
 		 */
 		 EditText myFilter = (EditText) rootView.findViewById(R.id.filtre);
 		  myFilter.addTextChangedListener(new TextWatcher() {
-		 
-		  public void afterTextChanged(Editable s) {
-		  }
-		 
-		  public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-		  }
-		 
-		  public void onTextChanged(CharSequence s, int start, int before, int count) {
-			  adapter.getFilter().filter(s.toString());
-		  }
+
+			  public void afterTextChanged(Editable s) {
+			  }
+
+			  public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+			  }
+
+			  public void onTextChanged(CharSequence s, int start, int before, int count) {
+				  adapter.getFilter().filter(s.toString());
+			  }
 		  });
 		 
 		  	/**
@@ -150,9 +159,9 @@ import com.pongiste.calping.R;
 	                build = new AlertDialog.Builder(getActivity());
 	             
 	                Joueur j2 = (Joueur) parent.getItemAtPosition(position);
-	                build.setTitle("Supprimer " +  j2.getNomJoueur() + " "+ j2.getPrenomJoueur());
+	                build.setTitle("Supprimer " +  j2.getNomJoueur() + " "+ j2.getPrenomJoueur() + " ?");
 	                build.setIcon(R.drawable.corbeille);  
-	                build.setMessage("Voullez-vous supprimer ce joueur ?");
+	                build.setMessage("Voulez-vous supprimer ce joueur ?");
 	                build.setPositiveButton("Oui",new DialogInterface.OnClickListener() {
 	                	
 	                
@@ -184,6 +193,12 @@ import com.pongiste.calping.R;
 	        });
 		 bd_joueur.close();
 	 }
+
+	/**
+	 * Ajouter une dérive au joueur
+	 */
+
+
 	 
 	  /**
 	   * Modification d'un joueur 
@@ -319,9 +334,6 @@ import com.pongiste.calping.R;
 		  bd_joueur.insererJoueur(nbjoueur, nomjoueur.getText().toString(), prenomjoueur.getText().toString(),
 				  pointsjoueur_mensuel.getText().toString() ,pointsjoueur_mensuel.getText().toString());
 		 creerListe();
-		
-		  
-		 
 	}
 	
 	  /**
@@ -348,9 +360,65 @@ import com.pongiste.calping.R;
 			super.onResume();
 			
 		}
-	  
-		
-}	
+
+	public void ajouterDerive() {
+
+		LayoutInflater inflater = getLayoutInflater(null);
+		View alertLayout = inflater.inflate(R.layout.vue_ajouterderive, null);
+		nbderive = (EditText)alertLayout.findViewById(R.id.derive);
+		nbderive.setHint("Indiquer points dérive"); //PlaceOlder
+
+
+		AlertDialog.Builder alert2 = new AlertDialog.Builder(getActivity());
+		alert2.setTitle("Ajouter une dérive");
+		alert2.setView(alertLayout);
+		alert2.setIcon(R.drawable.modifier);
+		alert2.setCancelable(false);
+		alert2.setNegativeButton("Quitter", new DialogInterface.OnClickListener() {
+
+			public void onClick(DialogInterface dialog, int which) {
+				Toast.makeText(getActivity(), "Aucune dérive ajouté !", Toast.LENGTH_SHORT).show();
+			}
+		});
+		alert2.setPositiveButton("Ajouter", new DialogInterface.OnClickListener() {
+
+			public void onClick(DialogInterface dialog, int which) {
+
+				FonctionJoueur bd_joueur = new FonctionJoueur(getActivity());
+				bd_joueur.open();
+
+				ArrayList<Integer> listeidjoueur = new ArrayList<Integer>();
+				listeidjoueur = bd_joueur.ListerIDjoueur();
+
+				for (Integer s : listeidjoueur)
+				{
+
+					int idjoueur=s;
+					double pointcourant = bd_joueur.DonnerPointCourantJoueur(idjoueur);
+					System.out.println("Avant points courant " + pointcourant);
+
+					pointcourant = pointcourant - Float.parseFloat(nbderive.getText().toString());
+
+					System.out.println("New points courant "+ pointcourant);
+					Joueur j = bd_joueur.ListerJoueur(idjoueur);
+					j.setPointsjoueur_mensuel(pointcourant);
+					bd_joueur.majJoueur(idjoueur, j);
+
+				}
+
+				creerListe();
+				bd_joueur.close();
+				Toast.makeText(getActivity(), "Dérive effectué !",Toast.LENGTH_LONG).show();
+
+
+			}
+		});
+		AlertDialog dialog2 = alert2.create();
+		dialog2.show();
+	}
+
+
+}
 
 	 
 	

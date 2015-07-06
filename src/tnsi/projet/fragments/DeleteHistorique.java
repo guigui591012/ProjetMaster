@@ -81,7 +81,7 @@ public class DeleteHistorique extends Activity implements OnClickListener {
 			if (checked.valueAt(i))
 				selectedItems.add(adapter.getItem(position));
 			// On va récupérer les informations dont l'on a besoin
-			Historique j2 = (Historique) adapter.getItem(position);
+			Historique j2 = adapter.getItem(position);
 			
 			//Historique du joueur a supprimer
 			int idhistoriqueasupprimer = j2.getIdhistorique();

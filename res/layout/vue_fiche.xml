@@ -42,8 +42,17 @@
                     android:adjustViewBounds="true"
                     android:background="@drawable/border"
                     android:src="@drawable/ajouterjoueur" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/border"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:text="Ajouter une dérive"
+                    android:id="@+id/derive" />
             </LinearLayout>
-            
+
             <EditText
                     android:id="@+id/filtre"
                     android:layout_width="fill_parent"

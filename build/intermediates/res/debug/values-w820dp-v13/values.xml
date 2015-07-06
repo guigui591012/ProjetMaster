@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/Projet_TNSI/res/values-w820dp/dimens.xml -->
+    <!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/CalPing/res/values-w820dp/dimens.xml -->
     <eat-comment/>
     <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
     <item name="android:actionBarTabBarStyle">@style/MyTheme.ActionBar.TabBar</item>

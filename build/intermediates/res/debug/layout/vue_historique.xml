@@ -74,11 +74,12 @@
                 android:layout_height="wrap_content"
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_ad_unit_id"
+                 
                 ads:loadAdOnCreate="true"
-                ads:testDevices="TEST_EMULATOR, @string/deviceID" />
+               />
         </LinearLayout>
         
                    
     </ScrollView>
 
-</LinearLayout><!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/Projet_TNSI/res/layout/vue_historique.xml -->
+</LinearLayout><!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/CalPing/res/layout/vue_historique.xml -->

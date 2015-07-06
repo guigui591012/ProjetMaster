@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+     android:orientation="vertical"
     android:background="@drawable/degrade"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -152,19 +153,25 @@
                 android:drawableLeft="@drawable/calcul"
                 android:text="@string/calcul" />
             
-        
-            <com.google.ads.AdView
+       
+        <com.google.ads.AdView
                 xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
                 android:id="@+id/adView"
                 android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_ad_unit_id"
                 ads:loadAdOnCreate="true"
-                ads:testDevices="TEST_EMULATOR, @string/deviceID" />
-
-        </LinearLayout>
+                />
+        
+        
+         
+          </LinearLayout>
     </ScrollView>
+    
+      
+  
 
-</LinearLayout><!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/Projet_TNSI/res/layout/vue_accueil.xml -->
+</LinearLayout>
+<!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/CalPing/res/layout/vue_accueil.xml -->
