@@ -1,13 +1,11 @@
 package tnsi.projet.base;
 
-import java.util.ArrayList;
-
-import tnsi.projet.base.MaBaseSQLiteJoueur;
-import tnsi.projet.base.Joueur;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
 
 /**
  * Fonction qui permette d'échanger des données 
@@ -154,8 +152,7 @@ public class FonctionJoueur {
 
 	/**
 	 * Lister les joueurs
-	 * 
-	 * @param id
+	 *
 	 * @return
 	 */
 	public Joueur ListerJoueur(int idJoueur) {

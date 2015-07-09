@@ -2,8 +2,8 @@
 <resources>
 
     <string name="app_name">Cal \' Ping</string>
-  	<string name="joueur"><u><i>Joueur :</i></u></string> 
-  	<string name="coeff"><u><i>Coeff :</i></u></string> 
+	<string name="joueur"><u>Joueur :</u></string>
+	<string name="coeff"><u>Coeff :</u></string>
     <string name="victoire">Victoire : </string>
     <string name="defaite">Défaite : </string>
     <string name="supprimer">Supprimer</string>

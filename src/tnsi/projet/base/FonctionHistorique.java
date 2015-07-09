@@ -1,10 +1,11 @@
 package tnsi.projet.base;
 
-import java.util.ArrayList;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
 
 /**
  * Fonction qui permette d'échanger des données avec la base de données
@@ -217,11 +218,11 @@ public class FonctionHistorique {
 	 */
 	public Historique ListerHistorique(int idHistorique) {
 
-		Cursor c = bdd.query(TABLE_HISTORIQUE, new String[] { COL_IDHISTORIQUE,
-				COL_IDJOUEUR, COL_POINTSADVERSAIRE, COL_POINTSGAGNE,
-				COL_VICTOIRE_DEFAITE, COL_POINTSCOURANTS
+		Cursor c = bdd.query(TABLE_HISTORIQUE, new String[]{COL_IDHISTORIQUE,
+						COL_IDJOUEUR, COL_POINTSADVERSAIRE, COL_POINTSGAGNE,
+						COL_VICTOIRE_DEFAITE, COL_POINTSCOURANTS
 
-		}, COL_IDHISTORIQUE + " = \"" + idHistorique + "\"", null, null, null,
+				}, COL_IDHISTORIQUE + " = \"" + idHistorique + "\"", null, null, null,
 				null);
 		return cursorToHistorique(c);
 	}
@@ -272,6 +273,18 @@ public class FonctionHistorique {
 		return pointsjoueur;
 	}
 
+	public int DonnerDernierIDHistoriqueJoueur(int idjoueur) {
+		int idhistoriquejoueur = 0;
+		SQLiteDatabase db = MaBaseSQLiteHistorique.getReadableDatabase();
+		Cursor c = db.rawQuery(
+				"select max(idhistorique) from historique where idjoueur = "
+						+ idjoueur, null);
+		if (c.moveToLast()) {
+			idhistoriquejoueur = c.getInt(0);
+		}
+		return idhistoriquejoueur;
+	}
+
 	/**
 	 * Fonction qui donne le meilleure classement d'un joueur
 	 * 
@@ -310,8 +323,8 @@ public class FonctionHistorique {
 
 	/**
 	 * Fonction qui donne les points courant d'un historique
-	 * 
-	 * @param idjoueur
+	 *
+	 *
 	 * @return les points courants
 	 */
 	public double DonnerPointsCourantHistorique(int idhistorique) {

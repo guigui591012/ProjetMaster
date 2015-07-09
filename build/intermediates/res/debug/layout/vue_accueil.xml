@@ -140,7 +140,8 @@
                 android:textOff="Défaite"
                 android:textOn="Victoire" 
                 android:layout_marginTop="30dp"
-               />
+                android:checked="false"
+                style="@android:style/Holo.Light.ButtonBar" />
 
             <Button
                 android:id="@+id/calcul"

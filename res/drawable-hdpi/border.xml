@@ -4,10 +4,10 @@
     <solid android:color="#FFFFFF" />
 
     <stoke
-        android:width="2dp"
+        android:width="1dp"
         android:color="#95a5a6" />
 
-    <corners android:radius="8dp" />
+    <corners android:radius="3dp" />
 
     <padding
         android:bottom="5dp"

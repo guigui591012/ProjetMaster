@@ -1,10 +1,5 @@
 package tnsi.projet.fragments;
 
-import java.util.ArrayList;
-import tnsi.projet.base.FonctionHistorique;
-import tnsi.projet.base.FonctionJoueur;
-import tnsi.projet.base.Joueur;
-import tnsi.projet.base.MaBaseSQLiteJoueur;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -28,6 +23,13 @@ import android.widget.Toast;
 
 import com.pongiste.calping.R;
 
+import java.util.ArrayList;
+
+import tnsi.projet.base.FonctionHistorique;
+import tnsi.projet.base.FonctionJoueur;
+import tnsi.projet.base.Joueur;
+import tnsi.projet.base.MaBaseSQLiteJoueur;
+
 /**
  * Fragment FICHE 
  * 2ème page de l'application 
@@ -48,19 +50,18 @@ import com.pongiste.calping.R;
 	TextView nom,prenom;
 	String noms,prenoms;
 	float pointsjoueur_mensuels,pointsjoueur_courants;
-	private AlertDialog.Builder build;	
 	int ini,i,id_joueur,nbjoueur;
 	EditText nomjoueur, prenomjoueur,pointsjoueur_mensuel,pointsjoueur_courant,nbderive;
 	ImageButton btnAjouterJoueur;
 	Button monbouton;
 	Button maderive;
 	float pointcourant;
-	
-	
-	
-	 @SuppressLint("NewApi") @Override 
-	    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { 
-	        // Inflate the layout for this fragment 
+	private AlertDialog.Builder build;
+
+	@SuppressLint("NewApi")
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		// Inflate the layout for this fragment
 		 rootView = inflater.inflate(R.layout.vue_fiche, container, false);
 		 creerListe();
 		 btnAjouterJoueur = (ImageButton) rootView.findViewById(R.id.btn_AlertDialog);
@@ -366,7 +367,7 @@ import com.pongiste.calping.R;
 		LayoutInflater inflater = getLayoutInflater(null);
 		View alertLayout = inflater.inflate(R.layout.vue_ajouterderive, null);
 		nbderive = (EditText)alertLayout.findViewById(R.id.derive);
-		nbderive.setHint("Indiquer points dérive"); //PlaceOlder
+		nbderive.setHint("Indiquer dérive"); //PlaceOlder
 
 
 		AlertDialog.Builder alert2 = new AlertDialog.Builder(getActivity());
@@ -385,30 +386,41 @@ import com.pongiste.calping.R;
 			public void onClick(DialogInterface dialog, int which) {
 
 				FonctionJoueur bd_joueur = new FonctionJoueur(getActivity());
+
 				bd_joueur.open();
 
 				ArrayList<Integer> listeidjoueur = new ArrayList<Integer>();
+
 				listeidjoueur = bd_joueur.ListerIDjoueur();
 
-				for (Integer s : listeidjoueur)
-				{
 
-					int idjoueur=s;
+				for (Integer s : listeidjoueur) {
+
+					int idjoueur = s;
 					double pointcourant = bd_joueur.DonnerPointCourantJoueur(idjoueur);
-					System.out.println("Avant points courant " + pointcourant);
 
 					pointcourant = pointcourant - Float.parseFloat(nbderive.getText().toString());
+					pointcourant = (double) Math.round(pointcourant * 100) / 100; //2 chiffres après la virgule
 
-					System.out.println("New points courant "+ pointcourant);
+
 					Joueur j = bd_joueur.ListerJoueur(idjoueur);
 					j.setPointsjoueur_mensuel(pointcourant);
+					j.setPointsjoueur_courant(pointcourant);
 					bd_joueur.majJoueur(idjoueur, j);
 
+
+					FonctionHistorique bd_historique = new FonctionHistorique(getActivity());
+					int idhistoriqueaajouter = bd_historique.DonnerDernierIDHistoriqueJoueur(idjoueur) + 1;
+					bd_historique.open();
+					double pointderive = Float.parseFloat(nbderive.getText().toString());
+					pointderive = 0 - pointderive;
+					bd_historique.insererHistorique(idhistoriqueaajouter, idjoueur, 0, pointderive, "Derive", pointcourant);
+					bd_historique.close();
 				}
 
 				creerListe();
 				bd_joueur.close();
-				Toast.makeText(getActivity(), "Dérive effectué !",Toast.LENGTH_LONG).show();
+				Toast.makeText(getActivity(), "Dérive effectué !", Toast.LENGTH_LONG).show();
 
 
 			}

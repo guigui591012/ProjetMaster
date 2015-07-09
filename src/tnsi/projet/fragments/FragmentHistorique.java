@@ -1,9 +1,5 @@
 package tnsi.projet.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-import tnsi.projet.base.FonctionHistorique;
-import tnsi.projet.base.FonctionJoueur;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,15 +13,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
 import com.pongiste.calping.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import tnsi.projet.base.FonctionHistorique;
+import tnsi.projet.base.FonctionJoueur;
 
 /**
  * Fragment HISTORIQUE 3ème page de l'application Elle permettra de
@@ -37,8 +39,8 @@ import com.pongiste.calping.R;
  * 
  */
 public class FragmentHistorique extends Fragment {
-	View rootView;
 	public Spinner selectpoints;
+	View rootView;
 	String choixListe = "";
 	int idjoueur;
 	ImageButton corbeille;
@@ -194,12 +196,15 @@ public class FragmentHistorique extends Fragment {
 
 			TextView txvVictoire_Defaite1 = new TextView(getActivity());
 			if (informations.get(i).get(1).equals("Victoire")) {
-				txvVictoire_Defaite1
-						.setBackgroundResource(R.drawable.degrade_btnvert);
-			} else {
-				txvVictoire_Defaite1
-						.setBackgroundResource(R.drawable.degrade_btnrouge);
+				txvVictoire_Defaite1.setBackgroundResource(R.drawable.degrade_btnvert);
 			}
+			if (informations.get(i).get(1).equals("Defaite")) {
+				txvVictoire_Defaite1.setBackgroundResource(R.drawable.degrade_btnrouge);
+			}
+			if (informations.get(i).get(1).equals("Derive")) {
+				txvVictoire_Defaite1.setBackgroundResource(R.drawable.degrade_btnjaune);
+			}
+
 
 			txvVictoire_Defaite1.setText(informations.get(i).get(1));
 			txvVictoire_Defaite1.setWidth(tailleElement);
@@ -216,8 +221,7 @@ public class FragmentHistorique extends Fragment {
 			txvPointsGagne1.setGravity(Gravity.CENTER);
 			grl_TableauResultat.addView(txvPointsGagne1);
 
-			// /////////////////////Points
-			// cournat///////////////////////////////////
+			// /////////////////////Points cournat///////////////////////////////////
 
 			TextView txvPoint_courant = new TextView(getActivity());
 			txvPoint_courant.setText(informations.get(i).get(3));
