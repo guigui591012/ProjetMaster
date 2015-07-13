@@ -1,48 +1,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/degrade"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:paddingTop="@dimen/activity_vertical_margin">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/testbutton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical" >
- 
-		     <Button
-		        android:id="@+id/testbutton"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_alignParentBottom="true"
-		        android:drawableLeft="@drawable/corbeille"
-		         android:background="@drawable/border"
-		        android:text="@string/supprimer" />
-     
- 	<ListView
-        android:id="@+id/ListView01"
-        android:layout_marginTop="20dp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
-        android:choiceMode="multipleChoice"
-        android:layout_above="@id/testbutton">
-    </ListView>
-    
-      <com.google.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/corbeille"
+            android:text="@string/supprimer" />
+
+        <ListView
+            android:id="@+id/ListView01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/testbutton"
+            android:layout_marginTop="20dp"
+            android:choiceMode="multipleChoice"></ListView>
+
+        <!--  <com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
                 android:id="@+id/adView"
-                android:layout_marginTop="5dp"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_ad_unit_id"
-                ads:loadAdOnCreate="true"
-                
-                 />
-        </LinearLayout>
-        
+                ads:loadAdOnCreate="true" />-->
+    </LinearLayout>
+
 
 </RelativeLayout>

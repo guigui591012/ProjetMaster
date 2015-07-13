@@ -5,24 +5,24 @@
     android:background="@drawable/degrade"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="20dp"
-                android:weightSum="1" >
+                android:weightSum="1">
 
                 <TextView
                     android:id="@+id/joueur"
@@ -63,23 +63,19 @@
                 android:layout_below="@+id/selectpoints"
                 android:layout_margin="1dp"
                 android:background="@drawable/border"
-                android:stretchColumns="1" >
-            </GridLayout>
-            
-             <com.google.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-                android:id="@+id/adView"
-                android:layout_marginTop="5dp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/banner_ad_unit_id"
-                 
-                ads:loadAdOnCreate="true"
-               />
+                android:stretchColumns="1"></GridLayout>
+
+            <!--  <com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+               android:id="@+id/adView"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:layout_marginTop="5dp"
+               ads:adSize="BANNER"
+               ads:adUnitId="@string/banner_ad_unit_id"
+               ads:loadAdOnCreate="true" />-->
         </LinearLayout>
-        
-                   
+
+
     </ScrollView>
 
 </LinearLayout>

@@ -1,5 +1,4 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -7,17 +6,17 @@
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView3"
@@ -35,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="10dp"
-                android:weightSum="1" >
+                android:weightSum="1">
 
                 <TextView
                     android:id="@+id/joueur"
@@ -63,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="10dp"
-                android:weightSum="1" >
+                android:weightSum="1">
 
                 <TextView
                     android:id="@+id/adversaires"
@@ -85,52 +84,51 @@
                     android:gravity="center"
                     tools:listitem="@android:layout/simple_spinner_dropdown_item" />
             </LinearLayout>
-            
 
 
-			            <EditText
-			                android:id="@+id/nombre1"
-			                android:layout_width="fill_parent"
-			                android:layout_height="wrap_content"
-			                android:layout_marginTop="40dp"
-			                android:background="@drawable/border"
-			                android:ems="10"
-                            android:hint="@string/nombre1"
-			                android:inputType="numberDecimal|numberSigned"
-                            android:maxLength="4"
-                            android:textSize="20sp" />
-		
-			    
-              <LinearLayout
+            <EditText
+                android:id="@+id/nombre1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                  android:orientation="horizontal"
-                android:weightSum="1" >
-				            
-	             <ImageButton
-	                    android:id="@+id/btn_rechercher"
-	                    android:layout_width="0dp"
-	                    android:layout_height="40dp"
-	                    android:layout_weight=".20"
-                     android:adjustViewBounds="true"
-	                    android:background="@drawable/border"
-	                    android:contentDescription="@string/description"
-	                    android:src="@drawable/rechercher" />
-	
-	            <EditText
-	                android:id="@+id/nombre2"
-					android:layout_width="0dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:hint="@string/nombre1"
+                android:inputType="numberDecimal|numberSigned"
+                android:maxLength="4"
+                android:textSize="20sp" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/btn_rechercher"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight=".20"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/border"
+                    android:contentDescription="@string/description"
+                    android:src="@drawable/rechercher" />
+
+                <EditText
+                    android:id="@+id/nombre2"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-	                android:layout_marginLeft="10dp"
-	                android:layout_weight=".80"
-	                android:background="@drawable/border"
-	                android:ems="10"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".80"
+                    android:background="@drawable/border"
+                    android:ems="10"
                     android:hint="@string/nombre2"
-	                android:inputType="numberDecimal|numberSigned"
+                    android:inputType="numberDecimal|numberSigned"
                     android:maxLength="4"
                     android:textSize="20sp" />
-            
+
             </LinearLayout>
 
             <Switch
@@ -153,25 +151,20 @@
                 android:text="@string/calcul"
                 android:textColor="#042988"
                 android:textSize="30sp" />
-            
-       
-        <com.google.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-                android:id="@+id/adView"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-                android:layout_marginTop="5dp"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/banner_ad_unit_id"
-                ads:loadAdOnCreate="true"
-                />
-        
-        
-         
-          </LinearLayout>
+
+
+            <!--  <com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+                  android:id="@+id/adView"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:layout_marginTop="5dp"
+                  ads:adSize="BANNER"
+                  ads:adUnitId="@string/banner_ad_unit_id"
+                  ads:loadAdOnCreate="true" />-->
+
+
+        </LinearLayout>
     </ScrollView>
-    
-      
-  
+
 
 </LinearLayout>

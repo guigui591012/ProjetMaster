@@ -1,134 +1,128 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/degrade"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
-          <LinearLayout
-         	android:layout_width="fill_parent"
-    		android:layout_height="wrap_content"
-    		android:padding="20dp"
-    		android:weightSum="1"
-    		android:orientation="horizontal">
-    		
-                      	<TextView
-                      	android:id="@+id/joueur"
-				        android:layout_width="0dp"
-				        android:layout_height="wrap_content"
-				        android:layout_weight=".3"
-				        android:text="@string/joueur"
-				        android:textColor="#042988"
-				        android:textAppearance="?android:attr/textAppearanceMedium"
-				        android:gravity="center" />
-
-                      	 <Spinner
-				        android:id="@+id/selectpoints"
-				        android:background="@drawable/spinner"
-				        android:layout_width="0dp"
-				        android:layout_height="wrap_content"
-				        android:layout_weight=".70"
-				        android:layout_marginLeft="10dp"
-				        />
-
-			</LinearLayout>
-
-          	<GridLayout
-        android:id="@+id/grl_performance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="1dp"
-        android:stretchColumns="3"
-        android:scaleType="centerCrop"
-        android:background="@drawable/border"
-        android:layout_below="@+id/selectpoints">  
-        
-        <ImageView
-        android:id="@+id/poucevert"
-        android:layout_margin="6dp"
-   		android:layout_width="30dp"
-    	android:layout_height="30dp"
-    	android:gravity="center_horizontal"
-        android:src="@drawable/poucevert" />
-          	
-         <ImageView
-        android:id="@+id/poucerouge"
-        android:layout_margin="6dp"
-    	android:layout_width="30dp"
-    	android:layout_height="30dp"
-    	android:gravity="center_horizontal"
-        android:src="@drawable/poucerouge" />
-         
-         <ImageView
-        android:id="@+id/top"
-    	android:layout_width="40dp"
-    	android:layout_height="50dp"
-    	android:gravity="center_horizontal"
-        android:src="@drawable/top" />
-         
-        <ImageView
-        android:id="@+id/descendante"
-    	android:layout_width="40dp"
-    	android:layout_height="50dp"
-    	android:gravity="center_horizontal"
-        android:src="@drawable/descendante" />
-        
-         <ImageView
-        android:id="@+id/match_gagne"
-        android:layout_margin="6dp"
-   		android:layout_width="30dp"
-    	android:layout_height="30dp"
-    	android:gravity="center_horizontal"
-        android:src="@drawable/match_gagne" />
-         
-                  <ImageView
-        android:id="@+id/match_perdu"
-        android:layout_margin="6dp"
-   		android:layout_width="30dp"
-    	android:layout_height="30dp"
-    	android:gravity="center_horizontal"
-        android:src="@drawable/match_perdu" />
-                  
-                  <ImageView
-        android:id="@+id/moyenne"
-        android:layout_margin="6dp"
-   		android:layout_width="30dp"
-    	android:layout_height="30dp"
-    	android:gravity="center_horizontal"
-        android:src="@drawable/moyenne" />
-          	    
-          	    
- 		   </GridLayout>
- 		   
-          	    <com.google.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-                android:id="@+id/adView"
-                android:layout_marginTop="5dp"
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/banner_ad_unit_id"
-                ads:testDevices="TEST_EMULATOR, @string/deviceID" 
-                ads:loadAdOnCreate="true"
-                 />
- 		   
-</LinearLayout>
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:weightSum="1">
 
-               
+                <TextView
+                    android:id="@+id/joueur"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:gravity="center"
+                    android:text="@string/joueur"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#042988" />
 
-</ScrollView>
+                <Spinner
+                    android:id="@+id/selectpoints"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".70"
+                    android:background="@drawable/spinner" />
+
+            </LinearLayout>
+
+            <GridLayout
+                android:id="@+id/grl_performance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/selectpoints"
+                android:layout_margin="1dp"
+                android:background="@drawable/border"
+                android:scaleType="centerCrop"
+                android:stretchColumns="3">
+
+                <ImageView
+                    android:id="@+id/poucevert"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="6dp"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/poucevert" />
+
+                <ImageView
+                    android:id="@+id/poucerouge"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="6dp"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/poucerouge" />
+
+                <ImageView
+                    android:id="@+id/top"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/top" />
+
+                <ImageView
+                    android:id="@+id/descendante"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/descendante" />
+
+                <ImageView
+                    android:id="@+id/match_gagne"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="6dp"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/match_gagne" />
+
+                <ImageView
+                    android:id="@+id/match_perdu"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="6dp"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/match_perdu" />
+
+                <ImageView
+                    android:id="@+id/moyenne"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="6dp"
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/moyenne" />
+
+
+            </GridLayout>
+
+            <!--  <com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+               android:id="@+id/adView"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:layout_marginTop="5dp"
+               ads:adSize="BANNER"
+               ads:adUnitId="@string/banner_ad_unit_id"
+               ads:loadAdOnCreate="true" />-->
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </LinearLayout>
 

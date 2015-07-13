@@ -5,82 +5,78 @@
     android:background="@drawable/degrade"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:paddingTop="@dimen/activity_vertical_margin">
 
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="Gestion des joueurs"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#042988"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:weightSum="1">
 
-            <TextView
-                android:id="@+id/textView3"
+
+            <ImageButton
+                android:id="@+id/btn_AlertDialog"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
+                android:adjustViewBounds="true"
                 android:background="@drawable/border"
-                android:text="Gestion des joueurs"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#042988"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:src="@drawable/ajouterjoueur" />
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="20dp"
-                android:gravity="center"
-                android:weightSum="1" >
-
-
-                <ImageButton
-                    android:id="@+id/btn_AlertDialog"
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
-                    android:adjustViewBounds="true"
-                    android:background="@drawable/border"
-                    android:src="@drawable/ajouterjoueur" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/border"
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
-                    android:text="Ajouter une dérive"
-                    android:id="@+id/derive" />
-            </LinearLayout>
-
-            <EditText
-                    android:id="@+id/filtre"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-		        	android:background="@drawable/border"
-		        	android:layout_marginBottom="20dp"
-		        	android:drawableLeft="@drawable/rechercher_icone"
-                    android:hint="@string/rechercherjoueur" >
-                </EditText>
-
-            <ListView
-                android:id="@+id/tableau"
+            <Button
+                android:id="@+id/derive"
+                style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
-                android:layout_height="300dp"
-                tools:listitem="@android:layout/simple_list_item_2" />
-            
-             <com.google.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/border"
+                android:text="Ajouter une dérive" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/filtre"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/border"
+            android:drawableLeft="@drawable/rechercher_icone"
+            android:gravity="center"
+            android:hint="@string/rechercherjoueur"></EditText>
+
+        <ListView
+            android:id="@+id/tableau"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            tools:listitem="@android:layout/simple_list_item_2" />
+
+        <!--  <com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
                 android:id="@+id/adView"
-                android:layout_marginTop="5dp"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_ad_unit_id"
-                ads:loadAdOnCreate="true"
-                 />
-        </LinearLayout>
-        
+                ads:loadAdOnCreate="true" />-->
+    </LinearLayout>
+
 
 </RelativeLayout>

@@ -1,33 +1,32 @@
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-     android:orientation="vertical"
     android:background="@drawable/degrade"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
                 android:text="@string/app_name"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#042988"
                 android:textSize="45sp"
-                android:layout_marginBottom="20sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -35,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="10dp"
-                android:weightSum="1" >
+                android:weightSum="1">
 
                 <TextView
                     android:id="@+id/joueur"
@@ -49,12 +48,12 @@
 
                 <Spinner
                     android:id="@+id/selectpoints"
-                    android:background="@drawable/spinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:drawSelectorOnTop="true"
                     android:layout_marginLeft="10dp"
                     android:layout_weight=".70"
+                    android:background="@drawable/spinner"
+                    android:drawSelectorOnTop="true"
                     android:gravity="center" />
             </LinearLayout>
 
@@ -63,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="10dp"
-                android:weightSum="1" >
+                android:weightSum="1">
 
                 <TextView
                     android:id="@+id/adversaires"
@@ -77,102 +76,96 @@
 
                 <Spinner
                     android:id="@+id/coefficient"
-                    android:background="@drawable/spinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight=".7"
+                    android:background="@drawable/spinner"
                     android:gravity="center"
                     tools:listitem="@android:layout/simple_spinner_dropdown_item" />
             </LinearLayout>
-            
 
 
-			            <EditText
-			                android:id="@+id/nombre1"
-			                android:layout_width="fill_parent"
-			                android:layout_height="wrap_content"
-			                android:layout_marginTop="40dp"
-			                android:background="@drawable/border"
-			                android:hint="@string/nombre1"
-			                android:ems="10"
-			                android:textSize="20sp"
-			                android:inputType="numberDecimal|numberSigned"
-			                android:maxLength="4" />
-		
-			    
-              <LinearLayout
+            <EditText
+                android:id="@+id/nombre1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="40dp"
-                android:weightSum="1" >
-				            
-	             <ImageButton
-	                    android:id="@+id/btn_rechercher"
-	                    android:layout_width="0dp"
-	                    android:layout_height="40dp"
-	                    android:adjustViewBounds="true"
-	                    android:layout_weight=".20"
-	                    android:background="@drawable/border"
-	                    android:contentDescription="@string/description"
-	                    android:src="@drawable/rechercher" />
-	
-	            <EditText
-	                android:id="@+id/nombre2"
-					android:layout_width="0dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:hint="@string/nombre1"
+                android:inputType="numberDecimal|numberSigned"
+                android:maxLength="4"
+                android:textSize="20sp" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/btn_rechercher"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight=".20"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/border"
+                    android:contentDescription="@string/description"
+                    android:src="@drawable/rechercher" />
+
+                <EditText
+                    android:id="@+id/nombre2"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-	                android:layout_marginLeft="10dp"
-	                android:layout_weight=".80"
-	                android:hint="@string/nombre2"
-	                android:textSize="20sp"
-	                android:background="@drawable/border"
-	                android:ems="10"
-	                android:inputType="numberDecimal|numberSigned"
-	                android:maxLength="4" />
-            
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".80"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:hint="@string/nombre2"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:maxLength="4"
+                    android:textSize="20sp" />
+
             </LinearLayout>
 
             <Switch
                 android:id="@+id/victoire_defaite"
+                style="@android:style/Holo.Light.ButtonBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textOff="Défaite"
-                android:textOn="Victoire" 
                 android:layout_marginTop="30dp"
                 android:checked="false"
-                style="@android:style/Holo.Light.ButtonBar" />
+                android:textOff="Défaite"
+                android:textOn="Victoire" />
 
             <Button
                 android:id="@+id/calcul"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:textSize="30sp"
-                android:textColor="#042988"
                 android:background="@drawable/border"
                 android:drawableLeft="@drawable/calcul"
-                android:text="@string/calcul" />
-            
-       
-        <com.google.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+                android:text="@string/calcul"
+                android:textColor="#042988"
+                android:textSize="30sp" />
+
+
+          <!--  <com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
                 android:id="@+id/adView"
-                android:layout_marginTop="5dp"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
                 ads:adSize="BANNER"
                 ads:adUnitId="@string/banner_ad_unit_id"
-                ads:loadAdOnCreate="true"
-                />
-        
-        
-         
-          </LinearLayout>
+                ads:loadAdOnCreate="true" />-->
+
+
+        </LinearLayout>
     </ScrollView>
-    
-      
-  
+
 
 </LinearLayout>
 <!-- From: file:/Users/guillaumehautcoeur/Desktop/eclipse/CalPing/res/layout/vue_accueil.xml -->
