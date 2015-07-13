@@ -153,14 +153,14 @@
                 android:textSize="30sp" />
 
 
-          <!--  <com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-                android:id="@+id/adView"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="5dp"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/banner_ad_unit_id"
-                ads:loadAdOnCreate="true" />-->
+            <!--  <com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+                  android:id="@+id/adView"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:layout_marginTop="5dp"
+                  ads:adSize="BANNER"
+                  ads:adUnitId="@string/banner_ad_unit_id"
+                  ads:loadAdOnCreate="true" />-->
 
 
         </LinearLayout>
